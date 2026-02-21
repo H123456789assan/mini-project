@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<section class="auth-section">
+    <div class="auth-card">
+        <h2>Create Account</h2>
+        <p class="auth-sub">Join Butcheré Premium</p>
+
+        <form action="/signup" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit" class="btn-red full-btn">SIGN UP</button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="/login">Login</a>
+        </p>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

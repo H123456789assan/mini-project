@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Butcheré</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4efe7;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: url('/images/hero.jpg') center/cover no-repeat;
+    height: 650px;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 70px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.tagline {
+    color: #d4a64a;
+    font-size: 24px;
+    font-style: italic;
+    margin: 15px 0 30px;
+}
+
+.btn {
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #7b1e1e;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+/* ===== FEATURES ===== */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 70px 8%;
+    background: #f4efe7;
+}
+
+.feature-box {
+    background: #fff;
+    padding: 40px;
+    text-align: center;
+    width: 30%;
+    border: 1px solid #e5e5e5;
+}
+
+.feature-box h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+/* ===== SIGNATURE ===== */
+.signature {
+    background: #7b1e1e;
+    color: white;
+    text-align: center;
+    padding: 90px 8%;
+}
+
+.section-small {
+    color: #d4a64a;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.signature h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin: 15px 0 50px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product {
+    width: 30%;
+    background: #5e1414;
+}
+
+.product img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.product-title {
+    background: #8a2222;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.view-btn {
+    margin-top: 40px;
+}
+.signature {
+            background-image: url('/images/red-texture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 100px 8%;
+            text-align: center;
+            color: white;
+        }
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="hero-overlay">
+        <div>
+            <h1>PREMIUM <br> QUALITY MEATS</h1>
+            <p class="tagline">Crafted to Perfection</p>
+
+            <a href="#" class="btn btn-primary">SHOP NOW</a>
+            <a href="#" class="btn btn-outline">LEARN MORE</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-box">
+        <h3>TOP GRADE CUTS</h3>
+        <p>Only the best, hand-selected meats.</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>ARTISAN BUTCHERY</h3>
+        <p>Expertly crafted by master butchers.</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>GOURMET GIFTS</h3>
+        <p>Luxury gift sets for any occasion.</p>
+    </div>
+</section>
+
+<section class="signature">
+     <p class="section-small">THE FINEST SELECTIONS</p>
+    <h2>Our Signature Cuts</h2>
+
+    <div class="products">
+        <div class="product">
+            <img src="/images/tomahawk.jpg">
+            <div class="product-title">TOMAHAWK STEAK</div>
+        </div>
+
+        <div class="product">
+            <img src="/images/wagyu.jpg">
+            <div class="product-title">WAGYU BEEF</div>
+        </div>
+
+        <div class="product">
+            <img src="/images/ribeye.jpg">
+            <div class="product-title">DRY-AGED RIB EYE</div>
+        </div>
+    </div>
+
+    <div class="view-btn">
+        <a href="#" class="btn btn-primary">VIEW ALL PRODUCTS</a>
+    </div>
+
+</section>
+
+</body>
+</html>

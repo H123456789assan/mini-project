@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title || "Admin Panel" %></title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div class="admin-wrapper">
+
+    <%- include('../partials/adminSidebar') %>
+
+    <div class="admin-content">
+        <%- body %>
+    </div>
+
+</div>
+
+</body>
+</html>
