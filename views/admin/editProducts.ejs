@@ -1,8 +1,26 @@
+<%- include('../partials/adminHeader') %>
+
 <h1>Edit Product</h1>
 
-<form class="admin-form">
-    <input type="text" value="Tomahawk Steak">
-    <input type="number" value="120">
-    <textarea>Premium cut steak...</textarea>
-    <button class="btn-primary">Update Product</button>
+<form action="/admin/products/update/<%= product._id %>" method="POST" enctype="multipart/form-data">
+
+    <div class="card">
+        <input type="text" name="name" value="<%= product.name %>" required>
+        <br><br>
+        <input type="number" name="price" value="<%= product.price %>" required>
+        <br><br>
+        <textarea name="description"><%= product.description %></textarea>
+        <br><br>
+
+        <img src="/<%= product.image %>" width="150">
+        <br><br>
+
+        <input type="file" name="image">
+        <br><br>
+
+        <button type="submit">Update Product</button>
+    </div>
+
 </form>
+
+<%- include('../partials/adminFooter') %>

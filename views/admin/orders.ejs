@@ -1,16 +1,13 @@
+<%- include('../partials/adminHeader') %>
+
 <h1>Orders</h1>
 
-<table class="admin-table">
-    <tr>
-        <th>Order ID</th>
-        <th>User</th>
-        <th>Total</th>
-        <th>Status</th>
-    </tr>
-    <tr>
-        <td>#1234</td>
-        <td>John</td>
-        <td>$200</td>
-        <td>Delivered</td>
-    </tr>
-</table>
+<% orders.forEach(order => { %>
+    <div class="card">
+        <p>User: <%= order.user.name %></p>
+        <p>Total: ₹ <%= order.totalPrice %></p>
+        <p>Date: <%= order.createdAt.toDateString() %></p>
+    </div>
+<% }) %>
+
+<%- include('../partials/adminFooter') %>

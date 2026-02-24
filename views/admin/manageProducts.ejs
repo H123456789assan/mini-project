@@ -1,0 +1,27 @@
+<%- include('../partials/adminHeader') %>
+
+<h1>Manage Products</h1>
+
+<a href="/admin/products/add">
+    <button>Add New Product</button>
+</a>
+
+<br><br>
+
+<% products.forEach(product => { %>
+    <div class="card">
+        <img src="/<%= product.image %>" width="150">
+        <h3><%= product.name %></h3>
+        <p>₹ <%= product.price %></p>
+
+        <a href="/admin/products/edit/<%= product._id %>">
+            <button>Edit</button>
+        </a>
+
+        <a href="/admin/products/delete/<%= product._id %>">
+            <button>Delete</button>
+        </a>
+    </div>
+<% }) %>
+
+<%- include('../partials/adminFooter') %>

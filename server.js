@@ -1,29 +1,84 @@
-const express = require("express");
-const path = require("path");
+// ===============================
+// IMPORTS
+// ===============================
+require('dotenv').config();
 
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+
+const connectDB = require('./config/db');
+
+// Route Files
+const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+
+// Middlewares
+const globalMiddleware = require('./middleware/globalmiddleware');
+const errorMiddleware = require('./middleware/errormiddleware');
+
+
+// ===============================
+// INITIAL SETUP
+// ===============================
 const app = express();
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+// Connect Database
+connectDB();
 
-app.use(express.static(path.join(__dirname, "public")));
+
+// ===============================
+// VIEW ENGINE
+// ===============================
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+
+// ===============================
+// MIDDLEWARES
+// ===============================
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
 
-// Temporary routes (UI only)
-app.get("/", (req, res) => {
-  res.render("user/home");
+// Global user attach middleware
+app.use(globalMiddleware);
+
+
+// ===============================
+// ROUTES
+// ===============================
+
+// Home Page
+app.get('/', (req, res) => {
+    res.render('user/home');
 });
 
-app.get("/login", (req, res) => {
-  res.render("auth/login");
-});
+// Route Mounting
+// app.use('/', authRoutes);
+// app.use('/', productRoutes);
+// app.use('/', orderRoutes);
+// app.use('/admin', adminRoutes);
+console.log("authRoutes:", authRoutes);
+console.log("productRoutes:", productRoutes);
+console.log("orderRoutes:", orderRoutes);
+console.log("adminRoutes:", adminRoutes);
 
-app.get("/register", (req, res) => {
-  res.render("auth/register");
-});
 
-app.get("/admin/dashboard", (req, res) => {
-  res.render("admin/dashboard");
-});
+// ===============================
+// ERROR HANDLER (MUST BE LAST)
+// ===============================
+app.use(errorMiddleware);
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+
+// ===============================
+// SERVER LISTEN
+// ===============================
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(` Server running on port ${PORT}`);
+});

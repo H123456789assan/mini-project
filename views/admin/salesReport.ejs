@@ -1,7 +1,13 @@
+<%- include('../partials/adminHeader') %>
+
 <h1>Sales Report</h1>
 
-<div class="admin-cards">
-    <div class="admin-card">Today: $1,200</div>
-    <div class="admin-card">This Month: $8,000</div>
-    <div class="admin-card">Top Product: Wagyu Beef</div>
+<div class="card">
+    <h3>Total Revenue: ₹ <%= totalRevenue %></h3>
 </div>
+
+<div class="card">
+    <h3>Total Orders: <%= totalOrders %></h3>
+</div>
+
+<%- include('../partials/adminFooter') %>
